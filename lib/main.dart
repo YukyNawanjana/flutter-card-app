@@ -33,7 +33,6 @@ class _CardPageState extends State<CardPage> {
   void changeCardFace(){
     setState(() {
       leftCardNumber = Random().nextInt(13) + 1;
-      rightCardNumber = Random().nextInt(13) + 1;
     });
   }
   @override
@@ -51,8 +50,7 @@ class _CardPageState extends State<CardPage> {
               },
               child: Image.asset(
                   'images/card$leftCardNumber.png',
-                  height: 100,
-                  width: 100,
+                  width: 200,
 
               )
           ),
@@ -64,16 +62,14 @@ class _CardPageState extends State<CardPage> {
               textColor: Colors.white,
               color: Colors.green,
               child: Text(
-                'True',
+                'Shuffle ',
                 style: TextStyle(
                   color: Colors.white,
                   fontSize: 20.0,
                 ),
               ),
               onPressed: (){
-                setState(() {
-
-                });
+                changeCardFace();
               },
             ),
           ),
